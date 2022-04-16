@@ -1,0 +1,15 @@
+<!-- miniprogram/pages/strategy/strategy.wxml -->
+<view class="strategy">
+	<search-input
+	 value="{{keyword}}"
+	 autocomplete="{{autocompleteList}}"
+   placeholder="请输入攻略"
+	 bindinput="handleInput"
+	 bindclickAutocomplete="handleClickAutocomplete"
+	 bindsearch="handleSearch"
+	/>
+	<strategy-card card-list="{{strategyList}}" bindclickStar="handleClickStar" bindremove='handleRemove' />
+	<image src="/images/arc-add.svg" class="strategy-icon-add" bindtap="handleClickAdd" />
+	<reach-bottom-tip loading="{{ loading }}" empty="{{empty}}" notData="{{strategyList.length===0}}" />
+</view>
+

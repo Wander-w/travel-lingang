@@ -1,0 +1,20 @@
+.picture {
+  width: 700rpx;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding-top: 25rpx;
+  gap:15rpx  3%;
+  .picture-item {
+    flex: 48%;
+    height: 250rpx;
+  }
+
+  &:nth-child(1n) {
+    &::after {
+      content: "";
+      width: 100%;
+      flex: 47%;
+    }
+  }
+}

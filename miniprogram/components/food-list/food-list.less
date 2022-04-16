@@ -1,0 +1,44 @@
+.food-list {
+  margin-bottom: 30rpx;
+  .food-header {
+    margin-bottom: 40rpx;
+    border-bottom: 2rpx solid #f2f2f2;
+    // 标题
+    &_title {
+      font-size: 35rpx;
+      font-weight: bold;
+      padding: 50rpx;
+      line-height: 2;
+    }
+  }
+
+  // 内容
+  .food-content {
+    padding: 0 50rpx;
+    .food-list_wrap {
+      .food_item {
+        margin-bottom: 30rpx;
+        &:last-child {
+          margin-right: 0;
+        }
+        &_image {
+          &_wrapper {
+            display: flex;
+          }
+          width: 200rpx;
+          flex-shrink:0;
+          height: 150rpx;
+          margin-right: 40rpx;
+        }
+        &_text {
+          font-size: 35rpx;
+          line-height: 2;
+          color: #101010;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}

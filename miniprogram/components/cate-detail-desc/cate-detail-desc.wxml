@@ -1,0 +1,29 @@
+<!-- components/cate-detail-desc/cate-detail-desc.wxml -->
+<!-- 简介 -->
+<view wx:if="{{detail}}" class="cate-detail_desc">
+	<view class="cate-detail_desc_title_text">简介</view>
+	<view class="cate-detail_desc_other">
+		<view class="cate-detail_desc_other_title_text">营业时间</view>
+		<view class="cate-detail_desc_other_desc_text">{{detail.open_time}}</view>
+	</view>
+	<view class="cate-detail_desc_other">
+		<view class="cate-detail_desc_other_title_text">服务及设施</view>
+		<view class="cate-detail_desc_other_desc_text">{{detail.facilities}}</view>
+	</view>
+</view>
+<!-- tab 菜品/评价 -->
+<tabs
+ wx:if="{{detail}}"
+ marginBottom="{{marginBottom}}"
+ tabs="{{tabs}}"
+ mini="{{true}}"
+ border="{{true}}"
+ activeIndex="{{activeIndex}}"
+ bindchange="handleTabChange"
+>
+	<!-- 菜品列表 -->
+	<food-list wx:if="{{activeIndex ===0}}" foodList="{{detail.cate_list}}" />
+	<!-- 评论列表 -->
+	<comment-list wx:if="{{activeIndex ===1}}" commentList="{{commentList}}" bindsubmitComment="handleSubmitComment" />
+</tabs>
+

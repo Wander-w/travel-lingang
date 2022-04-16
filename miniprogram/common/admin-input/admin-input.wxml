@@ -1,0 +1,22 @@
+<!-- common/admin-input/admin-input.wxml -->
+<view class="admin-input {{isFoucs?'foucs':''}} {{isValid?'valid':''}}">
+	<input
+	 wx:if="{{type==='input'}}"
+	 type="text"
+	 class="input"
+	 value="{{value}}"
+	 bindfocus="handleFoucs"
+	 bindblur="handleBlur"
+	 bindinput="handleInput"
+	/>
+	<textarea
+	 wx:if="{{type==='textarea'}}"
+	 class="textarea"
+	 value="{{value}}"
+	 bindfocus="handleFoucs"
+	 bindblur="handleBlur"
+	 bindinput="handleInput"
+	/>
+	<div class="placeholder">{{placeholder}}</div>
+</view>
+

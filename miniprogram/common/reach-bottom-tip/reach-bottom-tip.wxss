@@ -1,0 +1,2 @@
+/* common/reach-bottom-tip/reach-bottom-tip.wxss */
+.reach-bottom-tip{ margin-top: 30rpx; text-align: center; font-size: 24rpx; }

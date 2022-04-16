@@ -1,0 +1,50 @@
+<!-- pages/list/list.wxml -->
+<view class="list" bindtap="handleClickContent">
+	<!-- Input -->
+	<search-input
+	 placeholder="{{placeholder}}"
+	 value="{{keyword}}"
+	 autocomplete="{{autocompleteList}}"
+	 bindinput="handleInput"
+	 bindclickAutocomplete="handleClickAutocomplete"
+	 bindsearch="handleSearch"
+	/>
+	<!-- custom-select 选中类型 -->
+	<custom-select
+	 options="{{selectOptions}}"
+	 currentValue="{{type}}"
+	 data-type="select"
+	 bindselect="handleSelect"
+	/>
+	<!-- custom-list-item 自定义列表项 -->
+	<view>
+		<view class="custom-list-item-wrapper" wx:for="{{dataSourceList}}" wx:key="index">
+			<view wx:if="{{$state.user.userInfo.admin}}" class="login-action">
+				<image
+				 src="/images/update.svg"
+				 data-id="{{item._id}}"
+				 class="update-icon"
+				 bindtap="handleUpdate"
+				/>
+				<image
+				 src="/images/remove.svg"
+				 data-id="{{item._id}}"
+				 data-na="{{item.name}}"
+				 class="remove-icon"
+				 bindtap="handleRemove"
+				/>
+			</view>
+			<custom-list-item
+			 title="{{item.name}}"
+			 type="{{item.type}}"
+			 tag="{{item.tag}}"
+			 image="{{item.images[0].imagePath}}"
+			 data-id="{{item._id}}"
+			 bindtap="handleClick"
+			/>
+		</view>
+	</view>
+	<!-- 底部加载提示 -->
+	<reach-bottom-tip loading="{{loading}}" empty="{{empty}}" notData="{{dataSourceList.length===0}}" />
+</view>
+

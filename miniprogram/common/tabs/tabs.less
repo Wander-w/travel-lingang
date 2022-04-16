@@ -1,0 +1,32 @@
+.tabs {
+  &_header {
+    .tab_item_wrap {
+      display: flex;
+      justify-content: center;
+      height: 75rpx;
+      .tab_item {
+        flex: 1;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.3s;
+      }
+    }
+
+    &.mini {
+      display: flex;
+      justify-content: center;
+      .tab_item_wrap {
+        width: fit-content;
+        .tab_item {
+          flex: none;
+          padding: 0 60rpx;
+        }
+      }
+    }
+  }
+
+  &_content {
+    width: 100%;
+  }
+}

@@ -1,0 +1,27 @@
+.comment-list {
+  padding: 0 30rpx;
+}
+.comment-item {
+  margin-bottom: 100rpx;
+
+  &.collapsed {
+    .comment-content {
+      overflow: hidden;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+  }
+  .comment-content {
+    word-break: break-all;
+    margin-bottom: 40rpx;
+  }
+  // 审核容器
+  .comment-action {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.tip{
+  text-align: center;
+}

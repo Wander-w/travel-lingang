@@ -1,0 +1,46 @@
+<!-- pages/strategy-detail/strategy-detail.wxml -->
+<view class="strategy-detail__container" wx:if="{{_id&&detail}}">
+	<!-- 用户信息 -->
+	<view class="userinfo__wrapper">
+		<image class="userinfo__image--avatar" mode="widthFix" src="{{detail.avatar}}" />
+		<view class="userinfo__wrapper--desc">
+			<text class="author--text">{{detail.author}}</text>
+			<text class="author--create-time">{{detail.created_time}}</text>
+		</view>
+		<view class="userinfo__icon--wrapper">
+			<image
+			 class="userinfo__icon--star"
+			 mode="widthFix"
+			 src="{{detail.star?'/images/star-fill.svg':'/images/star.svg'}}"
+			 bindtap="handleClickStar"
+			/>
+		</view>
+	</view>
+	<!-- 图 -->
+	<view wx:if="{{detail.images.length>0}}" class="swiper-container">
+		<view class="swiper__dot">{{swiperActiveIndex+1}}/{{detail.images.length}}</view>
+		<swiper class="swiper__wrapper" current="{{swiperActiveIndex}}" bindchange="handleSwiperChange">
+			<swiper-item class="swiper__item" wx:for="{{detail.images}}" wx:key="*this">
+				<image
+				 src="{{item.imagePath}}"
+				 mode="aspectFill"
+				 style="width:100%;height:100%;"
+				 class="swiper_item_img"
+				 data-src="{{item.imagePath}}"
+				 bindtap="handlePreview"
+				/>
+			</swiper-item>
+		</swiper>
+	</view>
+	<!-- 描述 -->
+	<text class="content__wrapper">{{detail.content}}</text>
+	<!-- 评论区 -->
+	<view class="comment__container">
+		<view class="comment--title">
+			<text class="comment__title-text">评论</text>
+			<text class="comment__title-count">（{{comment.list.length}}）</text>
+		</view>
+		<comment-list commentList="{{comment.list}}" bindsubmitComment="handleSubmitComment" />
+	</view>
+</view>
+

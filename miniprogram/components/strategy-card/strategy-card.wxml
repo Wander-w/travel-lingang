@@ -1,0 +1,63 @@
+<!-- common/strategy-card/strategy-card.wxml -->
+<view class="strategy-card-container {{mode}}">
+	<view
+	 class="strategy-card-wrap"
+	 wx:for="{{cardList}}"
+	 wx:key="_id"
+	 key="{{item._id}}"
+	 bindtap="dispatcher"
+	>
+		<view
+		 class="strategy-card-content"
+		 style="background-image: url({{item.images.length>0?item.images[0].imagePath:$state.defaultImage}}) ;"
+		 data-type="bg"
+		 data-id="{{item._id}}"
+		>
+			<view
+			 wx:if="{{mode==='default'}}"
+			 class="strategy-card-title"
+			 data-type="bg"
+			 data-id="{{item._id}}"
+			>
+				{{item.title}}
+			</view>
+			<view wx:if="{{item.category}}" class="strategy-card-type">{{item.category}}</view>
+		</view>
+		<view wx:if="{{mode==='thumb'}}" class="thumb-title">{{item.title}}</view>
+		<view class="strategy-card-footer">
+			<view class="strategy-card-footer__info">
+				<image
+				 data-type="avatar"
+				 src="{{item.avatar}}"
+				 class="strategy-card-footer__info_avatar"
+				 mode="widthFix"
+				/>
+				<text data-type="name" class="strategy-card-footer__info_name">{{item.author}}</text>
+			</view>
+			<view class="strategy-card-footer__action">
+				<image
+				 wx:if="{{!hideStar}}"
+				 src="{{item.star?'/images/star-fill.svg':'/images/star.svg'}}"
+				 data-type="star"
+				 data-id="{{item._id}}"
+				 class="icon star"
+				/>
+				<image
+				 wx:if="{{$state.user.userInfo.admin}}"
+				 src="/images/update.svg"
+				 data-type="update"
+				 data-id="{{item._id}}"
+				 class="icon update"
+				/>
+				<image
+				 wx:if="{{$state.user.userInfo.admin}}"
+				 src="/images/remove.svg"
+				 data-type="remove"
+				 data-id="{{item._id}}"
+				 class="icon remove"
+				/>
+			</view>
+		</view>
+	</view>
+</view>
+

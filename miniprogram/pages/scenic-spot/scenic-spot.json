@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "search-input": "/common/search-input/search-input"
+  },
+  "navigationBarTitleText": "景点"
+}

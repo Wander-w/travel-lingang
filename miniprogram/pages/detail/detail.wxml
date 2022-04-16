@@ -1,0 +1,44 @@
+<!-- pages/detail/detail.wxml -->
+<view wx:if="{{detail}}" class="detail">
+	<!-- 图片 -->
+	<view class="detail_banner_wrap">
+		<image
+		 src="{{detail.images[0]?detail.images[0].imagePath:$state.defaultImage}}"
+		 mode="aspectFill"
+		 class="detail_banner"
+		 data-current="{{detail.images[0].imagePath}}"
+		 bindtap="handlePreview"
+		/>
+		<view bindtap="handleToPicture" class="detail_banner_float">
+			<image src="/images/picture.svg" class="detail_banner_float_icon" />
+			<text class="detail_banner_float_text">图册</text>
+		</view>
+	</view>
+	<!-- 位置描述 -->
+	<view class="detail_address_wrap" wx:if="{{detail}}">
+		<!-- 名称 -->
+		<view class="detail_name">{{detail.name}}</view>
+		<!-- 位置 -->
+		<view class="detail_address">
+			<!-- 地址 -->
+			<view class="detail_address-box">
+				<view class="detail_address_city">{{detail.city}}</view>
+				<!-- 地图导航 -->
+				<view class="detail_address_map">
+					<text class="detail_address_map_text" bindtap="handleOpenMap">线路导航</text>
+					<image src="/images/right-white.svg" class="detail_address_map_icon" />
+				</view>
+			</view>
+			<view class="detail_address_info">{{detail.address}}</view>
+		</view>
+	</view>
+	<!-- 简介 -->
+	<scenic-spot-detail-desc wx:if="{{cloudName ==='scenic-spot'}}" detail="{{detail}}" />
+	<cate-detail-desc
+	 wx:elif="{{cloudName ==='cate'}}"
+	 detail="{{detail}}"
+	 commentList="{{comment.list}}"
+	 bindrefresh="fetchDetail"
+	/>
+</view>
+

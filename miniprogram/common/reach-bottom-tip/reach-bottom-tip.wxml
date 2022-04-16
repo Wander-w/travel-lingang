@@ -1,0 +1,4 @@
+<!-- common/reach-bottom-tip/reach-bottom-tip.wxml -->
+<view class="reach-bottom-tip">
+  <text>{{ loading ? '正在加载中' : notData ? '暂无数据' : empty ? '已经到底了' :''}}</text>
+</view>

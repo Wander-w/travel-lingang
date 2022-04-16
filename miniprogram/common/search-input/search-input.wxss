@@ -1,0 +1,72 @@
+/* common/search-input/search-input.wxss */
+.search-input {
+  display: flex;
+  height: 60rpx;
+  padding: 0 30rpx;
+  margin-bottom: 20rpx;
+}
+
+
+.search-input .input-wrap {
+  flex: 1;
+  position: relative;
+  background-color: #f7f7f7;
+  border-radius: 60rpx;
+}
+
+.search-input .input-wrap .icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.search-input .input-wrap .icon.search {
+  left: 10rpx;
+}
+
+.search-input .input-wrap .icon.clear {
+  right: 10rpx;
+}
+
+.search-input .input-wrap .input {
+  margin: 0 60rpx;
+  height: 100%;
+}
+
+.search-input .input-wrap .mock_input {
+  margin: 0 60rpx;
+  height: 100%;
+  color: #828794;
+  line-height: 1.7;
+}
+
+.search-btn {
+  margin: 0 !important;
+  width: 120rpx;
+  border-radius: 60rpx;
+  font-size: 30rpx !important;
+  font-weight: normal;
+}
+
+.autocomplete-wrap {
+  box-sizing: border-box;
+  position: absolute;
+  top: 70rpx;
+  z-index: 20;
+  width: 750rpx;
+  padding: 20rpx 40rpx;
+  line-height: 50rpx;
+  font-size: 30rpx;
+  background-color: #FFF;
+  border-radius: 0 0 20rpx 20rpx;
+  z-index: 2001;
+}
+
+.autocomplete-wrap .autocomplete-item {
+  margin-bottom: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

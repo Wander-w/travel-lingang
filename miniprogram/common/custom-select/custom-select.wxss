@@ -1,0 +1,55 @@
+/* common/custom-select/custom-select.wxss */
+.custom-select {
+  position: relative;
+  width: 100%;
+  height: 70rpx;
+  margin-bottom: 20rpx;
+  z-index: 999;
+}
+
+.custom-select .custom-select_current_show {
+  width: 100%;
+  height: 100%;
+  /* background-color: #fff; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* icon */
+.custom-select .custom-select_icon {
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  bottom: 20rpx;
+  right: 30rpx;
+  transform: rotate(90deg);
+  transition: transform .5s;
+}
+
+.custom-select.foucs .custom-select_icon {
+  transform: rotate(-90deg);
+}
+
+/* options  */
+.custom-select .custom-select_list {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 0;
+  overflow: hidden;
+  background-color: #FFF;
+  transition: all .2s;
+}
+
+.custom-select .custom-select_list.show {
+  height: 350rpx;
+}
+
+.custom-select .custom-select_list_option {
+  width: 100%;
+  text-indent: 5rpx;
+  font-size: 30rpx;
+  font-weight: normal;
+}

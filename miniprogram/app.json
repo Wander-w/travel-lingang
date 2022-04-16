@@ -1,0 +1,67 @@
+{
+  "pages": [
+    "pages/scenic-spot/scenic-spot",
+    "pages/dashboard/dashboard",
+    "pages/amap/amap",
+    "pages/strategy/strategy",
+    "pages/user-center/user-center",
+    "pages/my/my",
+    "pages/list/list",
+    "pages/strategy-control/strategy-control",
+    "pages/login/login",
+    "pages/login-admin/login-admin",
+    "pages/cate/cate",
+    "common/custom-navbar/custom-navbar",
+    "pages/detail/detail",
+    "pages/search-temp/search-temp",
+    "pages/picture/picture",
+    "pages/strategy-detail/strategy-detail",
+    "pages/amap-steps/amap-steps"
+  ],
+  "window": {
+    "backgroundColor": "#F6F6F6",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F6F6F6",
+    "navigationBarTitleText": "临港旅游小程序",
+    "navigationBarTextStyle": "black"
+  },
+  "sitemapLocation": "sitemap.json",
+  "style": "v2",
+  "tabBar": {
+    "color": "#101010",
+    "selectedColor": "#08c1a8",
+    "backgroundColor": "#f8f8f8",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/scenic-spot/scenic-spot",
+        "text": "景点",
+        "iconPath": "icons/scenic_spot.png",
+        "selectedIconPath": "icons/scenic_spot_active.png"
+      },
+      {
+        "pagePath": "pages/cate/cate",
+        "text": "美食",
+        "iconPath": "icons/cate.png",
+        "selectedIconPath": "icons/cate_active.png"
+      },
+      {
+        "pagePath": "pages/strategy/strategy",
+        "text": "攻略",
+        "iconPath": "icons/strategy.png",
+        "selectedIconPath": "icons/strategy_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icons/user.png",
+        "selectedIconPath": "icons/user_active.png"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "尝试获取位置信息"
+    }
+  }
+}

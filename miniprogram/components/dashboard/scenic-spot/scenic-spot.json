@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "admin-input": "/common/admin-input/admin-input",
+    "custom-select": "/common/custom-select/custom-select",
+    "upload-image": "/common/upload-image/upload-image"
+  }
+}

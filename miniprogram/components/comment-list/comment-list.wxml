@@ -1,0 +1,56 @@
+<!-- components/comment-list/comment-list.wxml -->
+<view class="comment-list {{mode}}" wx:if="{{mode==='default'}}">
+	<!-- 评论列表 -->
+	<view class="comment-list_wrap">
+		<view
+		 class="comment_item"
+		 wx:for="{{commentList}}"
+		 wx:key="_id"
+		 wx:index="{{index}}"
+		>
+			<!-- 头像 -->
+			<image src="{{item.avatar}}" class="comment_item_image" />
+			<!-- 信息 -->
+			<view class="comment_item_info">
+				<!-- 名称 -->
+				<view class="comment_item_info_name">{{item.username}}</view>
+				<!-- 时间 -->
+				<view class="comment_item_info_created_time">{{item.created_time}}</view>
+				<!-- 评论 -->
+				<text class="comment_item_info_commentContent">{{item.commentContent}}</text>
+			</view>
+		</view>
+	</view>
+	<!-- 评论框 -->
+	<view class="comment__wrapper">
+		<block wx:if="{{$state.user.isLogin}}">
+			<textarea
+			 type="text"
+			 placeholder="评论一下~"
+			 class="comment__input"
+			 value="{{keyword}}"
+			 fixed="{{true}}"
+			 maxlength="-1"
+			 bindinput="handleInput"
+			/>
+			<button class="comment__btn-submit" bindtap="handleComment">发送</button>
+				</block>
+				<view wx:else>登录即可评论</view>
+		</view>
+</view>
+<view class="comment-list {{mode}}" wx:elif="{{mode==='thumb'}}">
+		<view class="comment_item" wx:for="{{commentList}}" wx:key="_id" wx:index="{{index}}" data-item="{{item}}" bindtap="handleClickThumb">
+				<image mode="aspectFill" src="{{item.avatar}}" class="comment__avatar" data-item="{{item}}" />
+				<view class="userinfo__wrap" data-item="{{item}}">
+						<view class="userinfo__info" data-item="{{item}}">
+								<text class="author--text" data-item="{{item}}">{{item.username}}</text>
+								<text class="author--create-time" data-item="{{item}}">{{item.created_time}}</text>
+						</view>
+						<view class="userinfo__content" data-item="{{item}}">{{item.commentContent}}</view>
+				</view>
+				<view wx:if="{{item.images.length>0}}" class="comment__strategy--wrapper">
+						<image mode="aspectFill" src="{{item.images[0]}}" class="comment__strategy" data-images="{{item.images}}" bindtap="handlePreviewImage" />
+				</view>
+		</view>
+</view>
+

@@ -1,0 +1,97 @@
+.strategy-detail__container {
+  padding-top: 120rpx;
+}
+
+.userinfo__wrapper {
+  position: fixed;
+  padding: 0 20rpx;
+  width: 750rpx;
+  height: 120rpx;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  z-index: 20;
+
+  // 头像
+  .userinfo__image--avatar {
+    width: 100rpx;
+    border-radius: 50%;
+  }
+
+  // 信息
+  .userinfo__wrapper--desc {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin: 0 20rpx;
+    overflow: hidden;
+    text {
+      display: block;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      &.author--text {
+        font-size: 28rpx;
+      }
+      &.author--create-time {
+        color: #9d9393;
+        font-size: 24rpx;
+        text-indent: 1em;
+      }
+    }
+  }
+
+  // 点赞
+  .userinfo__icon--wrapper {
+    width: 150rpx;
+    display: flex;
+    justify-content: center;
+    .userinfo__icon--star {
+      width: 55rpx;
+    }
+  }
+}
+.swiper-container {
+  position: relative;
+  .swiper__wrapper {
+    height: 400rpx;
+  }
+  .swiper__dot {
+    z-index: 999;
+    position: absolute;
+    bottom: 30rpx;
+    right: 30rpx;
+    color: #fff;
+    width: 85rpx;
+    height: 40rpx;
+    border-radius: 30rpx;
+    background-color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+  }
+}
+
+.content__wrapper {
+  display: block;
+  padding: 30rpx 50rpx;
+  font-size: 30rpx;
+  color: #101010;
+}
+
+.comment__container {
+  .comment--title {
+    padding-top: 20rpx;
+    margin: 30rpx 50rpx 20rpx 50rpx;
+    border-top: 1rpx solid #faf4f4;
+    .comment__title-text {
+      font-size: 33rpx;
+      color: #101010;
+      font-weight: bold;
+    }
+    .comment__title-count {
+      font-size: 24rpx;
+      color: #887f7f;
+    }
+  }
+}

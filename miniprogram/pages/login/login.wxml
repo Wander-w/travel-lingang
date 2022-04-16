@@ -1,0 +1,9 @@
+<!-- miniprogram/pages/login/login.wxml -->
+<view class="login">
+  <!-- Login Type Select -->
+  <view>
+    <button wx:for="{{buttons}}" wx:key="value" open-type="{{item.openType}}" lang="zh_CN" bindtap="handleClickButton" bindgetuserinfo="authGetUserInfo" data-type="{{item.value}}" class="login-btn login-{{item.value}}" hover-class="hover">
+      {{item.label}}
+    </button>
+  </view>
+</view>

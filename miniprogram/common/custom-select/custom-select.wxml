@@ -1,0 +1,10 @@
+<!--common/custom-select/custom-select.wxml-->
+<view class="custom-select {{isFoucs? 'foucs' : ''}}">
+  <view class="custom-select_current_show" bindtap="handleClickFoucs">{{currentValue}}</view>
+
+  <image src="/images/right.svg" class="custom-select_icon" bindtap="handleClickFoucs" />
+
+  <view class="custom-select_list {{isFoucs ? 'show' : ''}}">
+    <button class="custom-select_list_option" wx:for="{{options}}" wx:key="*this" data-value="{{item}}" bindtap="handleClickItem">{{item}}</button>
+  </view>
+</view>

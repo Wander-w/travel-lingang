@@ -1,0 +1,17 @@
+<!-- common/custom-list-item/custom-list-item.wxml -->
+<view class="custom-list-item">
+	<image class="custom-list-item_image" src="{{image?image:$state.defaultImage}}" mode="aspectFill" />
+	<view class="custom-list-item_info-wrap">
+		<!-- 标题 -->
+		<view class="custom-list-item_info_title">{{title}}</view>
+		<!-- 类型 -->
+		<view class="custom-list-item_info_type">{{type}}</view>
+		<!-- tag -->
+		<view class="custom-list-item_info_tag_wrap">
+			<block wx:for="{{tag}}" wx:key="*this">
+				<text wx:if="{{index<max}}" class="custom-list-item_info_tag">{{item}}</text>
+			</block>
+		</view>
+	</view>
+</view>
+

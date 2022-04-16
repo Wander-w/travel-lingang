@@ -1,0 +1,51 @@
+.my {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    padding: 40rpx;
+
+    /* 头像 */
+    .avatar {
+      margin-right: 40rpx;
+      width: 140rpx;
+      height: 140rpx;
+      border-radius: 70rpx;
+    }
+
+    /* 登录 或 用户名 */
+    .text.name {
+      font-size: 35rpx;
+      font-weight: bold;
+    }
+  }
+
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40rpx;
+    height: 80rpx;
+    transition: background-color 0.2s;
+
+    /* 点击时 */
+    &:active {
+      background-color: rgba(0, 0, 0, 0.1);
+    }
+    .info-name {
+      font-size: 31rpx;
+    }
+    .info-icon {
+      width: 40rpx;
+    }
+  }
+
+  .btn-logout {
+    width: 650rpx !important;
+    margin-bottom: 100rpx;
+  }
+}

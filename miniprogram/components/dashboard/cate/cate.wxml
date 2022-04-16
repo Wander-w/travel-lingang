@@ -1,0 +1,89 @@
+<!-- components/dashboard/cate/cate.wxml -->
+<view class="page">
+	<admin-input
+	 value="{{name}}"
+	 placeholder="请输入餐厅名称"
+	 data-key='name'
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 value="{{city}}"
+	 placeholder="请输入城市"
+	 data-key='city'
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 value="{{address}}"
+	 placeholder="请输入地址"
+	 data-key='address'
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 value="{{facilities}}"
+	 placeholder="请输入服务及设施(请以英文逗号进行分割)"
+	 data-key='facilities'
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 value="{{tag}}"
+	 placeholder="请输入标签(请以英文逗号进行分割)"
+	 data-key='tag'
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 type='textarea'
+	 value="{{open_time}}"
+	 placeholder="请输入营业时间(多行)"
+	 data-key='open_time'
+	 bindchange="handleChange"
+	/>
+	<!-- custom-select 选中类型 -->
+	<view class="type-select">
+		<view class="placeholder">请选择类型:</view>
+		<custom-select
+		 class="select"
+		 options="{{selectOptions}}"
+		 currentValue="{{type}}"
+		 data-type="select"
+		 data-key='type'
+		 bindselect="handleChange"
+		/>
+	</view>
+	<!-- 上传文件 -->
+	<view class="upload-image">
+		<view class="placeholder">请选择美食:</view>
+		<upload-image
+		 custom="upload-custom"
+		 uploadText="上传美食"
+		 data-key="filePath"
+		 imageList='{{filePath}}'
+		 bindremove='handleRemoveFile'
+		 bindselectFile="handleSelectFile"
+		/>
+	</view>
+	<view class="cate_list_wrapper">
+		<view wx:for="{{cateList}}" wx:key="index">
+			<admin-input
+			 value="{{cateList[index].name}}"
+			 data-index='{{index}}'
+			 placeholder="请输入招牌菜"
+			 bindchange="handleChangeCateItem"
+			/>
+			<upload-image
+			 custom="upload-custom"
+			 max='{{4}}'
+			 uploadText="上传招牌菜"
+			 imageList='{{item.files}}'
+			 data-index='{{index}}'
+			 data-key="cateList"
+			 bindremove='handleRemoveFile'
+			 bindselectFile="handleSelectFile"
+			/>
+		</view>
+	</view>
+	<view class="btn-group">
+		<button type="primary" data-max='{{3}}' bindtap="handleAppendCateList">添加招牌菜</button>
+		<button type="primary" class="btn-logout" bindtap="handlePublish">提交</button>
+	</view>
+</view>
+

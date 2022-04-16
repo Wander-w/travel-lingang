@@ -1,0 +1,18 @@
+<!-- components/scenic-spot-detail-desc/scenic-spot-detail-desc.wxml -->
+<!-- 简介 -->
+<view class="scenic-spot-detail-desc">
+	<view class="scenic-spot-detail-desc_title_text">简介</view>
+	<view class="scenic-spot-detail-desc_other">
+		<view class="scenic-spot-detail-desc_other_title_text">开放时间</view>
+		<text class="scenic-spot-detail-desc_other_desc_text">{{detail.open_time}}</text>
+	</view>
+	<view class="scenic-spot-detail-desc_other">
+		<view class="scenic-spot-detail-desc_other_title_text">设施包含</view>
+		<text class="scenic-spot-detail-desc_other_desc_text">{{detail.facilities}}</text>
+	</view>
+	<view class="scenic-spot-detail-desc_other">
+		<view class="scenic-spot-detail-desc_other_title_text">官方通知</view>
+		<text class="scenic-spot-detail-desc_other_desc_text">{{detail.notification}}</text>
+	</view>
+</view>
+

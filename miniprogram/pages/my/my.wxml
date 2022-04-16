@@ -1,0 +1,29 @@
+<!--miniprogram/pages/my.wxml-->
+<!-- tabBar 我的 -->
+<view class="my">
+	<view>
+		<view class="user-info" bindtap="handleClickUser">
+			<image src="{{$state.user.isLogin? $state.user.userInfo.avatar : $state.user.defaultAvatar}}" class="avatar" data-type="avatar" />
+			<text class="text name" data-type="name">{{$state.user.isLogin ? $state.user.userInfo.username : "登录"}}</text>
+		</view>
+
+		<block wx:for="{{routes}}" wx:key="index">
+			<view
+			 wx:if="{{item.auth?$state.user.userInfo.admin:true}}"
+			 wx:key="label"
+			 class="card-info"
+			 data-type="{{item.key}}"
+			 data-page="{{item.value}}"
+			 bindtap="handleGoToWhere"
+			>
+				<text class="info-name">{{item.label}}</text>
+				<image class="info-icon" src="/images/right.svg" mode="widthFix" />
+			</view>
+		</block>
+	</view>
+
+	<view wx:if="{{$state.user.isLogin}}">
+		<button type="primary" class="btn-logout" bindtap="handleLogout">退出登录</button>
+	</view>
+</view>
+

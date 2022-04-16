@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "tabs": "/common/tabs/tabs",
+    "strategy-card": "/components/strategy-card/strategy-card",
+    "comment-list": "/components/comment-list/comment-list",
+    "reach-bottom-tip": "/common/reach-bottom-tip/reach-bottom-tip"
+  },
+  "navigationBarTitleText": "个人中心"
+}

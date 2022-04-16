@@ -1,0 +1,22 @@
+<!--pages/login-admin/login-admin.wxml-->
+<view class="login-admin">
+  <view>
+    <!-- Account -->
+    <view class="form-item login">
+      <label class="text" for="account">账号</label>
+      <input class="input" name="account" value="{{account}}" type="text" placeholder="请输入账号" placeholder-class="placeholder" data-input="account" bindinput="handleInput" />
+    </view>
+
+    <!-- Password -->
+    <view class="form-item password">
+      <label class="text" for="password">密码</label>
+      <input class="input" name="password" value="{{password}}" type="password" placeholder="请输入密码" placeholder-class="placeholder" data-input="password" bindinput="handleInput" />
+    </view>
+
+
+    <!-- Error Message -->
+    <view wx:if="{{errorMsg}}" class="error-msg">{{errorMsg}}</view>
+
+    <button class="btn-login" type="primary" bindtap="handleLogin">登录</button>
+  </view>
+</view>

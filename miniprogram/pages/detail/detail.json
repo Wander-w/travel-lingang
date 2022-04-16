@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "scenic-spot-detail-desc": "/components/scenic-spot-detail-desc/scenic-spot-detail-desc",
+    "cate-detail-desc": "/components/cate-detail-desc/cate-detail-desc"
+  },
+  "navigationBarTitleText": ""
+}

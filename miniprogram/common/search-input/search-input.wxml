@@ -1,0 +1,18 @@
+<!--common/search-input/search-input.wxml-->
+<view class="search-input">
+  <view class="input-wrap">
+    <image src="/images/search.svg" class="icon search"></image>
+
+    <block>
+      <input wx:if="{{!readonly}}" type="text" value="{{value}}" class="input" placeholder="{{placeholder}}" bindinput="handleInput" bindtap="handleTap" bindblur="handleBlur" />
+      <view wx:else class="mock_input">{{placeholder}}</view>
+    </block>
+
+    <image wx:if="{{value}}" src="/images/clear.svg" class="icon clear" data-keyword="" bindtap="handleClickItem"></image>
+  </view>
+  <button size="mini" type="primary" class="search-btn" bindtap="handleSearch">搜索</button>
+</view>
+
+<view wx:if="{{isShowAutocomplete}}" class="autocomplete-wrap">
+  <view wx:for="{{autocomplete}}" wx:key="*this" class="autocomplete-item" data-keyword="{{item}}" bindtap="handleClickItem">{{item}}</view>
+</view>

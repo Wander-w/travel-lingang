@@ -1,0 +1,28 @@
+<!--pages/search-temp/search-temp.wxml-->
+<view class="search-temp">
+	<!-- 输入框 -->
+	<search-input
+	 placeholder="{{placeholder}}"
+	 value="{{keyword}}"
+	 autocomplete="{{autocompleteList}}"
+	 bindinput="handleInput"
+	 bindclickAutocomplete="handleClickAutocomplete"
+	 bindsearch="handleSearch"
+	/>
+
+	<!-- 自定义列表 -->
+	<custom-list-item
+	 wx:for="{{dataSourceList}}"
+	 wx:key="_id"
+	 title="{{item.name}}"
+	 type="{{item.type}}"
+	 tag="{{item.tag}}"
+	 image="{{item.images[0].imagePath}}"
+	 data-id="{{item._id}}"
+	 bindtap="handleClick"
+	/>
+
+	<!-- 底部加载提示 -->
+	<reach-bottom-tip wx:if="{{ loading }}" empty="{{empty}}" />
+</view>
+

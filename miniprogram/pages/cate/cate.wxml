@@ -1,0 +1,40 @@
+<!-- miniprogram/pages/cate/cate.wxml -->
+<view class="cate">
+	<!-- search -->
+	<navigator url="/pages/search-temp/search-temp?cloudName=cate">
+		<search-input readonly="{{true}}" placeholder="输入美食名称" />
+	</navigator>
+	<!-- swiper -->
+	<swiper
+	 class="swiper"
+	 autoplay="{{true}}"
+	 indicator-dots="{{true}}"
+	 indicator-color="#dddddd"
+	 indicator-active-color="#08c1a8"
+	>
+		<swiper-item class="swiper_item" wx:for="{{bannerList}}" wx:key="*this">
+			<image
+			 src="{{item?item:$state.defaultImage}}"
+			 mode="aspectFill"
+			 style="width:100%;height:100%;"
+			 class="swiper_item_img"
+			 data-src="{{item}}"
+			 bindtap="handlePreview"
+			/>
+		</swiper-item>
+	</swiper>
+	<!-- nav -->
+	<view class="nav_wrap">
+		<view class="nav_item" wx:for="{{navList}}" wx:key="name">
+			<image
+			 src="{{item.src}}"
+			 class="nav_item_icon"
+			 data-type="{{item.key}}"
+			 data-path="{{item.path}}"
+			 bindtap="handleGoToCustomPath"
+			/>
+			<text>{{item.label}}</text>
+		</view>
+	</view>
+</view>
+

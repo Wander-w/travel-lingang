@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "custom-navbar": "/common/custom-navbar/custom-navbar",
+    "upload-image": "/common/upload-image/upload-image"
+  },
+  "navigationStyle": "custom"
+}

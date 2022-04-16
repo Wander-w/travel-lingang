@@ -1,0 +1,12 @@
+{
+  "name": "travel-lingang",
+  "version": "1.0.3",
+  "description": "临港旅游小程序",
+  "main": "index.js",
+  "scripts": {},
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "wxministore": "^1.3.1"
+  }
+}

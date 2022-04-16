@@ -1,0 +1,41 @@
+<!-- components/food-list/food-list.wxml -->
+<view class="food-list">
+	<!-- 标题 -->
+	<view class="food-header">
+		<div class="food-header_title">招牌菜</div>
+	</view>
+	<!-- 菜品列表 -->
+	<view class="food-content">
+		<view class="food-list_wrap">
+			<view
+			 class="food_item"
+			 wx:for="{{foodList}}"
+			 wx:key="index"
+			 wx:index="{{index}}"
+			>
+				<view class="food_item_text">{{item.name}}</view>
+				<scroll-view scroll-x="{{true}}" wx:if="{{item.files.length>0}}">
+					<view class="food_item_image_wrapper">
+						<image
+						 wx:for="{{item.files}}"
+						 wx:for-item="filesItem"
+						 wx:key="fileID"
+						 src="{{filesItem.imagePath}}"
+						 mode="aspectFill"
+						 class="food_item_image"
+						 bindtap="handlePreview"
+						 data-current="{{filesItem.imagePath}}"
+						/>
+					</view>
+				</scroll-view>
+				<image
+				 wx:else
+				 src="{{$state.defaultImage}}"
+				 mode="aspectFill"
+				 class="food_item_image"
+				/>
+			</view>
+		</view>
+	</view>
+</view>
+

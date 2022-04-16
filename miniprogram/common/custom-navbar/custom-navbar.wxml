@@ -1,0 +1,8 @@
+<!--common/custom-navbar/custom-navbar.wxml-->
+<view class="custom-navbar" style="margin:{{navbar.top}}px 0 0 {{navbar.marginLeft}}px;width:{{navbar.width}}px;height:{{navbar.height}}px;">
+  <text wx:if="{{isBack}}" class="custom-navbar__back" bindtap="handleBack">取消</text>
+  <text class="custom-navbar__publish {{ slotBtnText ? 'custom-navbar__publish_slot': '' }}" bindtap="handlePublish">
+    <block wx:if="{{slotBtnText}}">{{slotBtnText}}</block>
+  </text>
+  <text class="custom-navbar__title" style="width:{{navbar.inductionWidth}}px;">{{title}}</text>
+</view>

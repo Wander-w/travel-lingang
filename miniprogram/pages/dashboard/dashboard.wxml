@@ -1,0 +1,13 @@
+<!-- pages/dashboard/dashboard.wxml -->
+<tabs
+ tabs="{{tabs}}"
+ border="{{true}}"
+ class="dashboard-tabs"
+ activeIndex="{{activeIndex}}"
+ bindchange="handleTabChange"
+>
+	<scenic-spot wx:if="{{activeIndex===0}}" detail="{{ activeIndex === 0 ? detail : null }}" bindupdated="handleUpdated" />
+	<cate wx:if="{{activeIndex===1}}" detail="{{ activeIndex === 1 ? detail : null }}" />
+	<comment wx:if="{{activeIndex===2}}" />
+</tabs>
+

@@ -1,0 +1,70 @@
+/* common/upload-image/upload-image.wxss */
+.upload-image {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.upload-image_preview__list {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.upload-image_preview__list::after {
+  content: "";
+  flex: 999;
+}
+
+.upload-image_preview__item {
+  position: relative;
+  flex: 30%;
+  margin-right: 5%;
+}
+.upload-image_preview__item .image.item {
+  width: 100%;
+  height: 100%;
+}
+
+.upload-image_preview__item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.upload-image_preview__item,
+.upload-image-wrap {
+  height: 150rpx;
+  margin-top: 20rpx;
+}
+.upload-image__remove {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50rpx;
+  height: 50rpx;
+  background: rgba(255,255,255,.5);
+}
+
+.upload-image-wrap {
+  margin: 50rpx;
+  width: 150rpx;
+  border: 2rpx dashed #8c8c8c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.upload-image-wrap.upload-image-wrap_no__empty {
+  width: 100%;
+}
+
+.upload-image-wrap .icon.add {
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.upload-image-wrap .upload-text {
+  margin-top: 10rpx;
+  font-size: 30rpx;
+  color: #616680;
+}

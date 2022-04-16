@@ -1,0 +1,18 @@
+/* pages/strategy-control/strategy-control.wxss */
+.strategy-control .line {
+  height: 2rpx;
+  background-color: #dde1e8;
+}
+
+.strategy-control .strategy-control_title,
+.strategy-control .strategy-control_content {
+  box-sizing: border-box;
+  width: 750rpx;
+  font-size: 25rpx;
+  margin: 20rpx 0;
+  padding: 0 20rpx;
+}
+
+.strategy-control .strategy-control_content{
+  height: 200rpx;
+}

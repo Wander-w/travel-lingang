@@ -1,0 +1,10 @@
+/* miniprogram/pages/strategy/strategy.wxss */
+
+.strategy-icon-add {
+  position: fixed;
+  bottom: 40rpx;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80rpx;
+  height: 80rpx;
+}

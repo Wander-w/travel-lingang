@@ -1,0 +1,32 @@
+<!-- pages/strategy-control/strategy-control.wxml -->
+<!-- 攻略 -->
+<view class="strategy-control">
+	<custom-navbar title="{{_id?'改帖子':'发帖子'}}" slotBtnText="{{_id?'修改':'发布'}}" bindslotBtntap="handlePublish" />
+	<upload-image
+	 uploadText="上传照片"
+	 imageList="{{filePath}}"
+	 bindremove='handleRemoveFile'
+	 bindselectFile="handleSelectFile"
+	/>
+	<view class="line" />
+	<input
+	 class="strategy-control_title"
+	 placeholder="请输入标题~"
+	 placeholder-class="strategy-control_title__placeholder"
+	 data-type="title"
+	 value="{{title}}"
+	 bindinput="handleInput"
+	/>
+	<view class="line" />
+	<textarea
+	 maxlength="{{-1}}"
+	 class="strategy-control_content"
+	 placeholder="请输入内容~"
+	 placeholder-class="strategy-control_content__placeholder"
+	 data-type="content"
+	 value="{{content}}"
+	 bindinput="handleInput"
+	/>
+	<view class="line"></view>
+</view>
+

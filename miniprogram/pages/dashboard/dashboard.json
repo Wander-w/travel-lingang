@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "tabs": "/common/tabs/tabs",
+    "cate": "/components/dashboard/cate/cate",
+    "scenic-spot": "/components/dashboard/scenic-spot/scenic-spot",
+    "comment": "/components/dashboard/comment/comment"
+  },
+  "navigationBarTitleText": "控制中心"
+}

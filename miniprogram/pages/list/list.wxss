@@ -1,0 +1,21 @@
+/* pages/list/list.wxss */
+.custom-list-item-wrapper{
+  position: relative;
+}
+.login-action {
+  position: absolute;
+  top: 50%;
+  right: 20rpx;
+  transform: translateY(-50%);
+  display: flex;
+}
+
+.update-icon,
+.remove-icon {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.update-icon {
+  margin-right: 10rpx;
+}

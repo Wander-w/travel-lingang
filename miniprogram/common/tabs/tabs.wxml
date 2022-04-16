@@ -1,0 +1,15 @@
+<!-- common/tabs/tabs.wxml -->
+<view class="tabs">
+  <!-- tab区 -->
+  <view class="tabs_header {{ mini ? 'mini' : '' }}" style="margin-bottom:{{marginBottom}};">
+    <view class="tab_item_wrap" style="border:{{border ?'1rpx solid '+ activeColor : 'none' }};">
+      <view class="tab_item {{ activeIndex === index ? 'active' : '' }}" wx:for="{{tabs}}" wx:key="index" style="color:{{ activeIndex === index ?  '#fff' : activeColor }};background-color:{{ activeIndex === index ? activeColor : 'none' }};" data-index="{{item.index}}" bindtap="handleClickTabItem">
+        {{item.title}}
+      </view>
+    </view>
+  </view>
+  <!-- 视图 -->
+  <view class="tabs_content">
+    <slot></slot>
+  </view>
+</view>

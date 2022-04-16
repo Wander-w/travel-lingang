@@ -1,0 +1,29 @@
+/* common/custom-navbar/custom-navbar.wxss */
+
+.custom-navbar {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.custom-navbar__back,
+.custom-navbar__publish {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+
+.custom-navbar__publish {
+  border-radius: 50rpx;
+}
+.custom-navbar__publish.custom-navbar__publish_slot {
+  background-color: #08c1a8;
+  color: #FFF;
+}
+
+.custom-navbar__title {}

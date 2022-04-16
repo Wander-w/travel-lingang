@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "tabs": "/common/tabs/tabs",
+    "food-list": "/components/food-list/food-list",
+    "comment-list": "/components/comment-list/comment-list"
+  }
+}

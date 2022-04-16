@@ -1,0 +1,73 @@
+<!-- components/dashboard/scenic-spot/scenic-spot.wxml -->
+<view class="page">
+	<admin-input
+	 value="{{name}}"
+	 data-key='name'
+	 placeholder="请输入景点名称"
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 type='textarea'
+	 value="{{city}}"
+	 data-key='city'
+	 placeholder="请输入景点城市(多行)"
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 value="{{address}}"
+	 data-key='address'
+	 placeholder="请输入景点地址"
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 value="{{facilities}}"
+	 data-key='facilities'
+	 placeholder="请输入设施(请以英文逗号进行分割)"
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 value="{{tag}}"
+	 data-key='tag'
+	 placeholder="请输入标签(请以英文逗号进行分割)"
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 type='textarea'
+	 value="{{notification}}"
+	 data-key='notification'
+	 placeholder="请输入官方通知(多行)"
+	 bindchange="handleChange"
+	/>
+	<admin-input
+	 type='textarea'
+	 value="{{open_time}}"
+	 data-key='open_time'
+	 placeholder="请输入开放时间(多行)"
+	 bindchange="handleChange"
+	/>
+	<!-- custom-select 选中类型 -->
+	<view class="type-select">
+		<view class="placeholder">请选择类型:</view>
+		<custom-select
+		 class="select"
+		 options="{{selectOptions}}"
+		 currentValue="{{type}}"
+		 data-type="select"
+		 data-key='type'
+		 bindselect="handleChange"
+		/>
+	</view>
+	<!-- 上传文件 -->
+	<view class="upload-image">
+		<view class="placeholder">请选择风景:</view>
+		<upload-image
+		 custom="upload-custom"
+		 imageList="{{filePath}}"
+		 uploadText="上传风景"
+		 bindselectFile="handleSelectFile"
+		 bindremove="handleRemoveFile"
+		/>
+	</view>
+	<button type="primary" class="btn-logout" bindtap="handlePublish">提交</button>
+</view>
+

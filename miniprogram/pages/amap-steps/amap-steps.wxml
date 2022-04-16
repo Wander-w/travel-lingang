@@ -1,0 +1,13 @@
+<!-- pages/amap-steps/amap-steps.wxml -->
+<block wx:if="{{action==='getTransitRoute'}}">
+	<view class="container">
+		<view wx:for="{{steps}}" wx:key="index" class="step-item">
+			<view class="step-title">路线{{index+1}}:</view>
+			<view class="step-desc" wx:for="{{item}}" wx:key="*this">{{item}}</view>
+		</view>
+	</view>
+</block>
+<block wx:else>
+	<view wx:for="{{steps}}" wx:key="*this" class="step-desc">{{item}}</view>
+</block>
+

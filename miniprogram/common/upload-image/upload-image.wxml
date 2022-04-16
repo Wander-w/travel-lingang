@@ -1,0 +1,28 @@
+<!-- common/upload-image/upload-image.wxml -->
+<view class="upload-image custom">
+	<!-- 显示列表 -->
+	<view class="upload-image_preview__list " wx:if="{{ imageList.length > 0 }}">
+		<view class="upload-image_preview__item" wx:for="{{imageList}}" wx:key="tempFilePath">
+			<image
+			 src="{{item.tempFilePath}}"
+			 data-src="{{item.tempFilePath}}"
+			 class="image item"
+			 mode="aspectFill"
+			 bindtap="handlePreview"
+			/>
+			<image
+			 src="/images/remove.svg"
+			 class="upload-image__remove"
+			 data-index="{{index}}"
+			 data-tempFilePath="{{item.tempFilePath}}"
+			 bindtap='handleRemoveFile'
+			/>
+		</view>
+	</view>
+	<!-- 上传容器 -->
+	<view class="upload-image-wrap {{ imageList.length > 0 ? 'upload-image-wrap_no__empty' : '' }}" bindtap="handleSelectFile">
+		<image src="/images/add.svg" class="icon add" />
+		<text class="upload-text">{{uploadText}}</text>
+	</view>
+</view>
+

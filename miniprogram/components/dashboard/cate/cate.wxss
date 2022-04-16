@@ -1,0 +1,1 @@
+.page{box-sizing:border-box}.type-select{display:flex;align-items:center}.type-select .placeholder{color:#08c1a8}.type-select .select{flex:1;margin:0 70rpx 0 50rpx}.upload-image .placeholder{color:#08c1a8}.upload-custom{margin:0 70rpx 0 50rpx}.btn-group{display:flex}

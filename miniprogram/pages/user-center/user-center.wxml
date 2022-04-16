@@ -1,0 +1,18 @@
+<!-- pages/user-center/user-center.wxml -->
+<tabs tabs="{{tabs}}" activeIndex="{{activeIndex}}" bindchange="handleTabChange">
+	<block wx:if="{{list.length>0}}">
+		<view wx:if="{{ activeIndex === 0 || activeIndex === 2 }}" class="strategy__wrap">
+			<strategy-card
+			 class="strategy__item"
+			 card-list="{{list}}"
+			 hideStar="{{activeIndex===0}}"
+			 bindclickStar="handleClickStar"
+			 bindremove='handleRemoveStrategy'
+			/>
+		</view>
+		<comment-list wx:elif="{{ activeIndex ===1 }}" mode="thumb" commentList="{{list}}" />
+	</block>
+</tabs>
+<!-- 底部加载提示 -->
+<reach-bottom-tip loading="{{loading}}" empty="{{empty}}" notData="{{list.length===0}}" />
+

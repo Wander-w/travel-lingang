@@ -1,0 +1,13 @@
+<!--pages/picture/picture.wxml-->
+<view class="picture">
+	<image
+	 src="{{item.imagePath}}"
+	 wx:for="{{pictureList}}"
+	 wx:key="*this"
+	 data-current="{{item}}"
+	 mode="aspectFill"
+	 class="picture-item"
+	 bindtap="handlePreview"
+	/>
+</view>
+

@@ -1,0 +1,11 @@
+{
+  "usingComponents": {
+    "search-input": "/common/search-input/search-input",
+    "custom-select": "/common/custom-select/custom-select",
+    "custom-list-item": "/common/custom-list-item/custom-list-item",
+    "reach-bottom-tip": "/common/reach-bottom-tip/reach-bottom-tip"
+
+  },
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

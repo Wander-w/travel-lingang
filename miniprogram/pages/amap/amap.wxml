@@ -1,0 +1,58 @@
+<!-- pages/amap/amap.wxml -->
+<view class="map_container">
+	<map
+	 class="map"
+	 id="map"
+	 longitude="{{longitude}}"
+	 latitude="{{latitude}}"
+	 scale="{{scale}}"
+	 show-location="true"
+	 markers="{{markers}}"
+	 include-points="{{includePoints}}"
+	 polyline="{{polyline}}"
+	 bindmarkertap="makertap"
+	/>
+</view>
+<!-- map search 查询附近 -->
+<view class="map_search-container {{inputFoucs ?'focus':'blur'}}">
+	<view class="map_search ">
+		<input
+		 type="text"
+		 placeholder="搜搜附近"
+		 class="map_search-input"
+		 value="{{keyword}}"
+		 bindinput="handleInput"
+		 bindfocus="handleFoucs"
+		 bindblur="handleBlur"
+		/>
+
+		<button wx:if="{{navigateInfo}}" class="map_search-btn" bindtap="handleNavigate">去导航</button>
+	</view>
+	<!-- 提示 -->
+	<view class="map_tips">
+		<view
+		 class="map_tips_item {{item.noLocation?'no-location':''}}"
+		 wx:for="{{tips}}"
+		 wx:key="id"
+		 data-item="{{item}}"
+		 bindtap="handleClickTips"
+		>
+			<view class="name" data-item="{{item}}">{{item.name}}</view>
+			<view class="description" data-item="{{item}}">
+				<text  class="description_address" data-item="{{item}}">{{item.district}}{{item.address}}</text>
+				<text  class="description_distance" data-item="{{item}}">{{item.distanceDesc?item.distanceDesc:''}}</text>
+			</view>
+		</view>
+	</view>
+</view>
+<!-- map -->
+<!-- marker Active info -->
+<view class="map_text">
+	<text class="h1">{{textData.name}}</text>
+	<text>{{textData.desc}}</text>
+</view>
+
+<view class="map-steps-entry {{showSteps?'show':''}}" bindtap="handleToStepsDetail">
+	详情
+</view>
+

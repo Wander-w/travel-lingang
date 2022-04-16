@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "search-input": "/common/search-input/search-input",
+    "strategy-card": "/components/strategy-card/strategy-card",
+    "reach-bottom-tip": "/common/reach-bottom-tip/reach-bottom-tip"
+  },
+  "navigationBarTitleText": "攻略",
+  "enablePullDownRefresh": true,
+  "backgroundTextStyle": "dark"
+}

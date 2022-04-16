@@ -1,0 +1,42 @@
+<!-- components/dashboard/comment/comment.wxml -->
+<view class="comment-list">
+	<!-- 评论内容项 -->
+	<view class="comment-item {{item.collapsed?'collapsed':''}}" wx:for="{{list}}" wx:key="_id">
+		<!-- 评论 -->
+		<view class="comment-content">{{index+1}}.{{item.commentContent}}</view>
+		<!-- 操作 -->
+		<view class="comment-action">
+			<button
+			 size="mini"
+			 type="default"
+			 data-index='{{index}}'
+			 bindtap="handleCollapsed"
+			>
+				{{item.collapsed ?'展开':'收回'}}
+			</button>
+			<button
+			 size="mini"
+			 class="comment-pass"
+			 type="primary"
+			 bindtap="handleAudit"
+			 data-id='{{item._id}}'
+			 data-status="true"
+			>
+				通过
+			</button>
+			<button
+			 size="mini"
+			 class="comment-no-pass"
+			 type="warn"
+			 data-id='{{item._id}}'
+			 data-status="false"
+			 bindtap="handleAudit"
+			>
+				不通过
+			</button>
+		</view>
+	</view>
+</view>
+<!-- 底部加载提示 -->
+<reach-bottom-tip loading="{{loading}}" empty="{{empty}}" notData="{{list.length===0}}" />
+
